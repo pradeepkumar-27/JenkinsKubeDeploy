@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      region: IN
+  template:
+    metadata:
+      name: "app"
+      labels:
+        region: IN
+    spec:
+      containers:
+        - name: app
+          image: pradeepkumar27/model-as-a-service:v2
