@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       region: IN
@@ -16,3 +16,15 @@ spec:
       containers:
         - name: app
           image: pradeepkumar27/model-as-a-service:v2
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: "app"
+spec:
+  type: NodePort
+  selector:
+    region: IN
+  ports:
+    - targetPort: 8080
+      port: 8080
