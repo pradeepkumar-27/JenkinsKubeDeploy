@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: app
-          image: pradeepkumar27/model-as-a-service:v2
+          image: pradeepkumar27/model-as-a-service:v5
